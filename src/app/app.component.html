@@ -1,0 +1,42 @@
+
+<ion-app>
+
+  
+
+  <ion-menu  side="start" menuId="first" contentId="content1">
+    <ion-header color="danger">
+      <ion-toolbar color="primary">
+        <!-- <ion-title>Navigate</ion-title> -->
+      </ion-toolbar>
+    </ion-header>
+    <ion-content >
+      
+      <ion-card *ngFor="let pages of navigate">
+     
+      
+      <!-- <ion-list *ngFor="let pages of navigate"> -->
+      <ion-menu-toggle auto-hide="true">
+        <ion-item [routerLink]="pages.url" routerDirection="forward">
+            <ion-icon color="primary" [name]="pages.icon" slot="start"></ion-icon>
+               {{pages.title}} 
+              
+        </ion-item>
+        
+      </ion-menu-toggle>
+      <!-- </ion-list> -->
+      
+    </ion-card>
+
+    <ion-footer>
+      <ion-toolbar>
+       
+
+        
+      </ion-toolbar>
+    </ion-footer>
+   
+    </ion-content>
+  </ion-menu>
+<ion-router-outlet id="content1"></ion-router-outlet>
+  <!-- <ion-router-outlet></ion-router-outlet> -->
+</ion-app>

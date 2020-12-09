@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding='true'>
+    <div class="center">
+      <img src="assets/images/logo56.jpg" />
+      <!-- <h1>Sign In</h1> -->
+    </div> 
+    <ion-card>
+     
+    
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label  position="floating" style="font-weight: bold;">Email </ion-label>
+        <ion-input autocomplete="off" type="email" name="email" [(ngModel)]="postData.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label  position="floating" style="font-weight: bold;">Password</ion-label>
+        <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
+      </ion-item>
+
+      <ion-item lines='none'>
+        <a routerLink='/signup'>Create Account</a>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" share="round" color="dark" (click)="loginAction()">Login</ion-button>
+  </form>
+</ion-card>
+</ion-content>

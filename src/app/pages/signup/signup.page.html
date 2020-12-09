@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding='true'>
+  <div class="center">
+    <img src="assets/images/logo56.jpg" />
+    <!-- <h1>Create Account</h1> -->
+  </div>
+  <form>
+
+    <ion-list>
+
+        <ion-item>
+            <ion-label position="floating" style="font-weight: bold;">First Name</ion-label>
+            <ion-input autocomplete="off" name="first_name" type="text" [(ngModel)]="postData.first_name"></ion-input>
+          </ion-item>
+     
+
+
+        <ion-item>
+          <ion-label position="floating" style="font-weight: bold;">Last Name</ion-label>
+          <ion-input autocomplete="off" name="last_name" type="text" [(ngModel)]="postData.last_name"></ion-input>
+        </ion-item>
+
+
+    
+      <ion-item>
+        <ion-label position="floating" style="font-weight: bold;">phone Number</ion-label>
+        <ion-input autocomplete="off" name="phone_number" type="text" [(ngModel)]="postData.phone_number"></ion-input>
+      </ion-item>
+  
+
+
+    <ion-item>
+      <ion-label style="font-weight: bold;">Gender</ion-label>
+      <ion-select autocomplete="off" name="gender" type="text" [(ngModel)]="postData.gender">
+        <ion-select-option value="Female">Female</ion-select-option>
+        <ion-select-option value="Male">Male</ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+    <ion-label position="floation" style="font-weight: bold;">Date of birth</ion-label>
+    <ion-input autocomplete="off" name="date_of_birth" type="date" [(ngModel)]="postData.date_of_birth"></ion-input>
+  </ion-item>
+  
+
+    <ion-item>
+        <ion-label position="floating" style="font-weight: bold;">Email</ion-label>
+        <ion-input autocomplete="off" name="email" type="email" [(ngModel)]="postData.email"></ion-input>
+      </ion-item>
+    
+
+
+    
+      <ion-item>
+        <ion-label position="floating" style="font-weight: bold;">Password</ion-label>
+        <ion-input autocomplete="off" name="password" type="password" [(ngModel)]="postData.password"></ion-input>
+      </ion-item>
+
+      <ion-item lines='none'>
+        Already have an account? <a routerLink='/login'>Sign in.</a>
+      </ion-item>
+      <ion-button expand="block" share="round" color="dark" (click)="signupAction()">Registration</ion-button>
+    </ion-list>
+   
+  
+  </form>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" color="dark">
+    <ion-tab-button tab="feed">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>profile</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="storage">
+      <ion-icon name="thunderstorm"></ion-icon>
+      <ion-label>storage</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about">
+    
+      <ion-icon name="information-circle"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button >
+
+    <ion-tab-button (click)="logoutAction()">
+      <ion-icon name="log-out"></ion-icon>
+      <ion-label>Log Out</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>
+</ion-content>

@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>
+     My Profile
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+                                
+<ion-content>
+
+
+ 
+
+
+
+  <ion-card class="first-card" >
+
+<img style="height:280px;" src=" assets/images/nice1.jpg" alt="nothing to display" >
+
+
+<ion-fab  >
+  <ion-fab-button  color="dark">
+    <img style="height:280px;" src=" assets/images/person.png" alt="nothing to display" >
+  </ion-fab-button>
+</ion-fab>
+
+    <ion-card   style="margin-top: -30px;border-radius: 15px;"> 
+      
+      <ion-list>
+        <br>
+        <ion-item>
+          <ion-icon color="primary" name="person" position="fixed"></ion-icon>
+
+          <ion-label position="floating">{{ authUser.user?.first_name }} , {{ authUser.user?.last_name }}   </ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+<br>
+        <ion-item>
+          <ion-icon color="primary" name="calendar"></ion-icon>
+          <ion-label position="floating">  {{ authUser.user?.date_of_birth }}</ion-label>
+          <ion-input  type="bday"></ion-input>
+        </ion-item>
+<br>
+        <ion-item>
+          <ion-icon color="primary" name="call"></ion-icon>
+          <ion-label position="floating"> {{ authUser.user?.phone_number }}</ion-label>
+          <ion-input  type="tel"></ion-input>
+        </ion-item>
+<br>
+        <ion-item>
+          <ion-icon color="primary" name="mail"></ion-icon>
+          <ion-label position="floating"> {{ authUser.user?.email }}</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+
+     
+      </ion-list>
+
+    </ion-card>
+    <ion-button size="full" color="dark">Update Profile </ion-button >
+    
+</ion-card>
+</ion-content>

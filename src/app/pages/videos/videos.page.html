@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title style="text-align: center;">
+    My Videos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+
+
+
+  <ion-progress-bar color="dark" [type]="'indeterminate'" *ngIf="showLoader"></ion-progress-bar>
+<ion-card color="primary">
+
+
+
+  <form [formGroup] = "form" (ngSubmit)="submitForm()" >
+  <ion-card color="dark">
+  <ion-input  id="fileinput" color="primary" accept=".mov, .mkv ,.mp4" type="file" name="file"   
+  (change)=" fileChange($event)" (change)="uploadFile($event)" ></ion-input>
+</ion-card>
+
+  <ion-card style="height: 150px;width: 90%; border: solid black;">
+    <video  style="height: 200px;width: 100%;" controls="controls" preload="metadata"  webkit-playsinline="webkit-playsinline" class="videoPlayer">
+      <source *ngIf="img1" [src]="img1" />
+     </video>
+    <div class="form-group">
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
+      <ion-fab-button color="dark" type="submit">
+        <ion-button color="dark" shape="round" type="submit"> 
+        <ion-icon shape="Round"   name="cloud-upload"  ></ion-icon >
+        </ion-button >
+      </ion-fab-button>
+    
+    </ion-fab>
+    
+  </div>
+
+  </ion-card>
+  
+</form>
+
+
+  </ion-card>
+<br>
+<ion-card>
+  <ion-card-header color="dark">
+    <p> {{ imgProps.length}}:Uploaded Videos</p>
+  </ion-card-header>
+
+  <!-- <ion-buttom (ckick)="">View</ion-buttom> -->
+  <ion-card>
+    
+  </ion-card>
+  <ion-card-content>
+    
+    <ion-card style="width:90%; border-radius:10px; " color="dark" *ngFor= "let item of imgProps   "> 
+      <video  style="height: 200px;width: 100%;" controls="controls" preload="metadata"  webkit-playsinline="webkit-playsinline" class="videoPlayer">
+        <source  src="{{item.url}}" />
+       </video>
+      <ion-fab vertical="top" horizontal="start" >
+        <ion-fab-button>
+          <ion-icon name="options"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="end">
+          <ion-fab-button  (click)=" AlertDeleteVideo(item.id)" color="dark"><ion-icon color="danger" name="trash"></ion-icon></ion-fab-button>
+          <ion-fab-button  (click)=" AlertDownloadVideo(item.id)"color="dark"><ion-icon color="warning" name="cloud-download"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+  
+            <ion-item color="danger" style="border:  1px solid #000;">
+            <ion-label >size: {{ item.size}}Kb</ion-label>
+          
+          </ion-item>
+          <ion-item color="danger" style="border-left:  1px solid #000;">
+            <ion-label >Name: {{ item.name}}</ion-label>
+          </ion-item>
+  
+      
+     </ion-card> 
+
+
+ 
+  </ion-card-content>
+</ion-card>
+
+
+
+
+
+
+
+<!-- 
+
+  <ion-card color="primary">
+  
+  
+    <ion-card color="warning">
+    <ion-input  accept="mov,.mkv,.mp4" type="file"  value=""  (change)="fileChange($event)"></ion-input>
+  </ion-card>
+  
+  
+    
+      <ion-icon style="height: 200px;width: 200px;"  name="videocam">
+     
+    </ion-icon>
+  <br>
+  <ion-button expand="full"  color="warning">
+    <ion-icon  slot="start"  name="cloud-upload"></ion-icon>
+    Upload
+  </ion-button>
+  
+  
+  </ion-card>
+  <br>
+  <ion-card>
+    <ion-card-header color="dark">
+      Uploaded videos
+    </ion-card-header>
+    <ion-card-content>
+      
+    </ion-card-content>
+  </ion-card>
+  <video  style="height: 200px;width: 100%;" controls="controls" preload="metadata"  webkit-playsinline="webkit-playsinline" class="videoPlayer">
+        <source *ngIf="img1" [src]="img1" />
+       </video>
+     -->
+  </ion-content>
+  
