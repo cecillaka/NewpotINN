@@ -1,3 +1,3 @@
-# More Information
+potin is a mobile app for uploading all types of file to the cloud
 
-https://www.9lessons.info/2019/08/ionic-5-angular-8-welcome-page.html
+
