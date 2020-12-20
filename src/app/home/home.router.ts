@@ -145,6 +145,23 @@ const routes: Routes = [
           }
         ]
       },
+
+
+
+      {
+        path: 'books',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../pages/books/books.module').then(
+                m => m.BooksPageModule
+              )
+          }
+        ]
+      },
+
+
       {
         path: 'settings',
         children: [

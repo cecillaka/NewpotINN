@@ -23,7 +23,8 @@ const routes: Routes = [
   { path: 'upload-modal', loadChildren: './upload-modal/upload-modal.module#UploadModalPageModule' },
   { path: 'preview-modal', loadChildren: './preview-modal/preview-modal.module#PreviewModalPageModule' },
   // { path: 'books', loadChildren: './books/books.module#BooksPageModule' },
-  { path: 'books', loadChildren: './pages/books/books.module#BooksPageModule' }
+  { path: 'books', loadChildren: './pages/books/books.module#BooksPageModule' },  { path: 'forgotpassword', loadChildren: './pages/forgotpassword/forgotpassword.module#ForgotpasswordPageModule' }
+
 
 
 ];

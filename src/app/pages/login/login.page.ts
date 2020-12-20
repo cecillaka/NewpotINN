@@ -49,11 +49,11 @@ export class LoginPage implements OnInit {
                 this.router.navigate(['home']);
               });
           } else {
-            this.toastService.presentToast('Incorrect username and password.');
+            this.toastService.presentToast('Network issue');
           }
         },
         (error: any) => {
-          this.toastService.presentToast('Network Issue.');
+          this.toastService.presentToast('Incorrect username and password.');
         }
       );
     } else {
